@@ -1,0 +1,21 @@
+<header>
+    <nav [viewMode]="viewMode" (change)="viewModeChanged($event)">
+        <h1>Application4V</h1>
+        <form class="category-form">
+            <select [(ngModel)]="selectedCategory" name="first" (ngModelChange)="categoryChanged()">
+                <option [ngValue]="null">All</option>
+                <option *ngFor="let option of categories" [ngValue]="option">{{ option.title }}</option>
+            </select>
+        </form>
+    </nav>
+</header>
+
+<grid>
+    <detail [ngClass]="{'visible': selectedArticle}" [article]="selectedArticle" (onClose)="closeDetail()"></detail>
+    <item *ngFor="let article of data" [article]="article" [ngClass]="{'selected': article.id === selectedArticle?.id}" [routerLink]="['/detail',article.id]">
+    </item>
+</grid>
+
+<footer>
+
+</footer>

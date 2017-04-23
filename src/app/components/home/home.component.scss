@@ -1,0 +1,35 @@
+@import './../../mixins.scss';
+
+:host {
+    h1 {
+        text-align: center;
+        font-size: 1.8em;
+        margin: 0px;
+        padding: 30px 0px;
+        background-color: $primary-color-dark;
+        color: $primary-color-text;
+        @include overflowEllipsis();
+    }
+
+    .category-form {
+        text-align: center;
+    }
+
+}
+
+@media( max-width: $mobileBreakPoint ) {
+    :host {
+        h1 {
+            padding: 0px;
+            background-color: inherit;
+            display: inline;
+            line-height: $mobileHeaderHeight;
+            margin-left: 10px;
+        }
+        .category-form {
+            line-height: $mobileHeaderHeight;
+            float: right;
+            margin-right: 10px;
+        }
+    }
+}

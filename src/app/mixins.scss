@@ -1,0 +1,22 @@
+$mobileBreakPoint: 640px;
+$mobileHeaderHeight: 50px;
+$desktopSidebarWidth: 20vw;
+$sidebarBgColor: darkgray;
+
+$primary-color-dark:   #303F9F;
+$primary-color:        #3F51B5;
+$primary-color-light:  #C5CAE9;
+$primary-color-light2: #0097a7;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #03A9F4;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+
+
+@mixin overflowEllipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

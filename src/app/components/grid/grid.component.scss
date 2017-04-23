@@ -1,0 +1,32 @@
+@import './../../mixins.scss';
+
+@mixin GridMobileView() {
+    .grid {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+
+:host {
+    .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: calc(#{$desktopSidebarWidth} + 5px);
+        
+    }
+}
+
+.list :host {
+    @include GridMobileView();
+}
+
+@media( max-width: $mobileBreakPoint ) {
+    :host {
+        @include GridMobileView();
+        .grid {
+            margin-top: $mobileHeaderHeight;
+            margin-left: 0;
+        }
+    }
+}

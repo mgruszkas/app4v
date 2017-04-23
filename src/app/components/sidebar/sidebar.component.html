@@ -1,0 +1,7 @@
+<div class="nav-heading">
+    <ng-content></ng-content>
+    <div class="view-switcher" [ngClass]="{'list-view': viewMode === modes.List}">
+        <i class="fa fa-bars list" aria-hidden="true" (click)="setViewMode(modes.List)"></i>
+        <i class="fa fa-th grid" aria-hidden="true" (click)="setViewMode(modes.Grid)"></i>
+    </div>
+</div>

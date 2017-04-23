@@ -1,0 +1,61 @@
+@import './../../mixins.scss';
+
+@mixin SidebarMobileView() {
+    float: none;
+    display: block;
+    height: $mobileHeaderHeight;
+    width: calc(100% - 1px);
+    position: fixed;
+    left: 5px;
+    top: 0px;
+
+    .view-switcher {
+        display: none;
+    }
+}
+
+:host {
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: $desktopSidebarWidth;
+    height: 100vh;
+    border: none;
+    background-color: $primary-color;
+    margin-right: 5px;
+    .view-switcher {
+        position: absolute;
+        top: 38px;
+        right: -25px;
+        overflow: hidden;
+        .fa {
+            margin: 10px;
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e64a19;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            &.grid {
+                background-color: #ff5722;
+            }
+        }
+
+        &.list-view {
+            .fa {
+                background-color: #e64a19;
+                &.list {
+                    background-color: #ff5722;
+                }
+            }
+        }
+    }
+}
+
+@media( max-width: $mobileBreakPoint ) {
+    :host {
+        @include SidebarMobileView();
+    }
+}

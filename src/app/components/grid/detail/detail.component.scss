@@ -1,0 +1,41 @@
+@import './../../../mixins.scss';
+
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 0vh;
+    overflow: hidden;
+    border: none;
+    transition: height 0.9s ease-in -0.7s;
+    &.visible {
+        height: 90vh;
+        overflow: scroll;
+        background-color: $accent-color;
+    
+    }
+
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        cursor: pointer;
+        font-size: 1.5em;
+    }
+
+    .title {
+        margin:30px 10px;
+    }
+
+    .content {
+        margin: 0px 10px;
+    }
+}
+
+@media( max-width: $mobileBreakPoint ) {
+    :host {
+        margin-top: 10px;
+    }
+}
